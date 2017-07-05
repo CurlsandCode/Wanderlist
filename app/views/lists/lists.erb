@@ -1,0 +1,9 @@
+<h1> Welcome <%="," +@user.username %></h1>
+<h2>Vacation Wish List</h2>
+
+<ul>
+<li><% @lists.each do |list| %>
+    <p><%list.name%></p>
+    <p><%list.reason%></p>
+</li>
+</ul>
