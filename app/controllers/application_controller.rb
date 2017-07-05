@@ -20,5 +20,15 @@ class ApplicationController < Sinatra::Base
     user= User.find(username: params[:username])
         redirect '/lists'
     end
+    
+    get '/signup' do
+    erb :'/users/create'
+    end
+    
+    post 'signup' do
+        user = User.new(params)
+        user.save
+        redirect '/lists'
+    end
 
 end
