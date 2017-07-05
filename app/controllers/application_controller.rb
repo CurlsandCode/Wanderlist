@@ -30,5 +30,9 @@ class ApplicationController < Sinatra::Base
         user.save
         redirect '/lists'
     end
+    
+    get '/lists' do
+        erb :'/lists/lists'
+    end
 
 end
