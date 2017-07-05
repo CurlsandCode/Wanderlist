@@ -35,4 +35,7 @@ class ApplicationController < Sinatra::Base
         erb :'/lists/lists'
     end
 
+    get '/lists/new' do
+    erb :'/lists/create'
+   end
 end
