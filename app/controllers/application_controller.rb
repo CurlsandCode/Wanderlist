@@ -10,5 +10,15 @@ class ApplicationController < Sinatra::Base
   get "/" do
     erb :index
   end
+    
+    get '/login' do
+       
+    erb :'/users/login'
+    end
+    
+    post 'login' do
+    user= User.find(username: params[:username])
+        redirect '/lists'
+    end
 
 end
