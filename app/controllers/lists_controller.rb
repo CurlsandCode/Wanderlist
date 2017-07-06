@@ -1,7 +1,8 @@
 class ListsController < ApplicationController
     
-     get '/lists' do
-        erb :'/lists/lists'
+     get '/lists' do #loads all list
+         @list =List.all
+        erb :'/lists'
     end
 
     get '/lists/new' do #loads new form
@@ -11,6 +12,25 @@ class ListsController < ApplicationController
     post '/lists' do #creates a list
         @list = List.create(params)
         redirect to '/lists'
+    end
+    
+    get '/lists/:id/edit' do #loads edit form
+        @list = List.find(params[:id])
+        erb :edit
+    end
+    
+    patch '/lists/:id' do #updates list
+        @list = List.find(params[:id])
+        @list.name = params[:name]
+        @list.reason = params[:reason]
+        @post.save
+        erb :show
+    end
+    
+    post '/lists/:id/delete' do #deletes a list
+        @list =List.find(param[:id])
+        @list.delelte
+        redirect '/lists'
     end
     
 end
