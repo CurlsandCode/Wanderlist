@@ -23,7 +23,6 @@ class ListsController < ApplicationController
         @list = List.find(params[:id])
         @list.name = params[:name]
         @list.reason = params[:reason]
-        @post.save
         erb :show
     end
     

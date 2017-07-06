@@ -1,9 +1,14 @@
-<h1> Welcome <%="," +@user.username %></h1>
+<h1> Welcome, <%= @user.username %></h1>
 <h2>Vacation Wish List</h2>
 
 <ul>
 <li><% @lists.each do |list| %>
     <p><%list.name%></p>
-    <p><%list.reason%></p>
+    <p>Reason I want to go: <%list.reason%></p>
 </li>
 </ul>
+
+
+<div>
+<a href="/list/new"><button>Add a place</button></a>
+</div>
