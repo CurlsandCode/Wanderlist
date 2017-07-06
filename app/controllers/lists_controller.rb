@@ -27,7 +27,7 @@ class ListsController < ApplicationController
         erb :show
     end
     
-    post '/lists/:id/delete' do #deletes a list
+    delete '/lists/:id/delete' do #deletes a list
         @list =List.find(param[:id])
         @list.delelte
         redirect '/lists'

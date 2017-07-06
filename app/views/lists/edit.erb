@@ -1,0 +1,8 @@
+<h1> Edit your list:</h1>
+<form method="post" action="/lists/<%=@list.id%>">
+   <label for ="list.name"> Name </label><br>
+   <input type="text" name="name" id="list_name"> <br>
+   <label for ="list.reason"> Why do you want to go there?</label><br>
+   <input type="text" name="reason" id="list_reason"><br>
+   <input type="submit" name="Save">
+</form>
