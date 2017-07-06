@@ -23,3 +23,4 @@ get "/" do
         user.save
         redirect '/lists'
     end
+end
