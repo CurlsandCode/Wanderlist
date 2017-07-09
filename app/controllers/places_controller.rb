@@ -20,7 +20,8 @@ class PlacesController < ApplicationController
     end
     
     get '/lists/:list_id/places/:places_id/edit' do #loads edit form
-        @list = List.find(params[:id])
+        @list = List.find(params[:list_id])
+        @place = @lists.places.find(params[:place_id])
          erb :"places/edit"
     end
     
