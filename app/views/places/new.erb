@@ -1,8 +1,8 @@
 <h1> Add a place to your list</h1>
-<form method="post" action='/lists/<%= @list.id %>/places'>
+  <form action="/lists/<%= @list.id %>/places" method="post">
    Name: <br>
    <input type="text" name="place[name]"> <br>
-   <% if list.id == 1 %>
+   <% if @list.id == 1 %>
     Pro Tip:
    <input type="text" name="place[content]"><br>
    <% else %>
@@ -11,3 +11,4 @@
    <input type="submit" name="Save">
    <% end %>
 </form>
+

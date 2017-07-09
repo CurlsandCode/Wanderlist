@@ -1,14 +1,15 @@
 class PlacesController < ApplicationController
     
-    get '/lists/:list_id/places' do
+    get '/lists/:list_id/places' do #loads all places
       @list = List.find(params[:list_id])
       @all_places = @list.places
       erb :"/places/places"
     end
     
     get '/lists/:list_id/places/new' do #loads new form
-    erb :'/places/new'
-   end
+        @list = List.find(params[:list_id])
+        erb :'/places/new'
+      end
     
     post '/lists/:list_id/places' do #creates a place
         @place = Place.create(params[:place])
