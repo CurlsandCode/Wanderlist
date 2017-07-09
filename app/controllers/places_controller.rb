@@ -7,14 +7,14 @@ class PlacesController < ApplicationController
     end
     
     get '/lists/:list_id/places/new' do #loads new form
-    erb :'/places/create_places'
+    erb :'/places/new'
    end
     
     post '/lists/:list_id/places' do #creates a place
         @place = Place.create(params[:place])
         @place.list = @list
         @place.save
-        redirect to '/places'
+        redirect to '/places/places'
     end
     
     get '/places/:id/edit' do #loads edit form
