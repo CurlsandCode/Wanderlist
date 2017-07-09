@@ -10,8 +10,8 @@ class UsersController < ApplicationController
     end
     
     post '/login' do
-    @user = User.find(:username => params[:username])
-     if @user && user.authenticate(params[:password])
+    @user = User.find_by(:username => params[:username])
+     if @user && @user.authenticate(params[:password])
     session[:id] = @user.id
      redirect '/lists'
     else
@@ -28,7 +28,7 @@ class UsersController < ApplicationController
     end
     
     post '/signup' do
-    redirect to '/' if logged_in?
+    redirect to '/lists' if logged_in?
     @user = User.new(params)
     if @user.save
         redirect '/lists'
