@@ -2,7 +2,7 @@ class PlacesController < ApplicationController
     
     get '/lists/:list_id/places' do #loads all places
       @list = List.find(params[:list_id])
-      @all_places = @list.places
+      @places = @list.places
       erb :"/places/places"
     end
     
@@ -12,28 +12,27 @@ class PlacesController < ApplicationController
       end
     
     post '/lists/:list_id/places' do #creates a place
+        @list = List.find(params[:list_id])
         @place = Place.create(params[:place])
         @place.list = @list
         @place.save
-        redirect to '/places/places'
+      redirect "/lists/#{params[:list_id]}/places"
     end
     
-    get '/places/:id/edit' do #loads edit form
+    get '/lists/:list_id/places/:places_id/edit' do #loads edit form
         @list = List.find(params[:id])
-        erb :edit
+         erb :"places/edit"
     end
     
-    patch '/places/:id' do #updates a place
-        @list = List.find(params[:id])
-        @list.name = params[:name]
-        @list.reason = params[:reason]
-        erb :show
+
+    patch '/lists/:list_id/places/:place_id' do #edits a place
+    @place.update_attributes(params[:place])
+    redirect "/lists/#{params[:list_id]}/places"
     end
-    
-    delete '/places/:id/delete' do #deletes a place
-        @list =List.find(param[:id])
-        @list.delelte
-        redirect '/places'
+
+   delete '/lists/:list_id/places/:place_id' do #deletes place
+    @place.destroy
+    redirect "/lists/#{params[:list_id]}/places"
     end
     
 end
