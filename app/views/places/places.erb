@@ -2,13 +2,14 @@
 <h2>Vacation Wish List</h2>
 
 <ul>
-<li><% @lists.each do |list| %>
-    <p><%list.name%></p>
-    <p>Reason I want to go: <%list.reason%></p>
+<li><% @list.places.each do |post| %>
+    <p><%= post.name%></p> <br>
+    <p>Reason I want to go: <%= post.content%></p>
+    <% end %>
 </li>
 </ul>
 
 
 <div>
-<a href="/list/new"><button>Add a place</button></a>
+<a href="/place/new"><button>Add a place</button></a>
 </div>
