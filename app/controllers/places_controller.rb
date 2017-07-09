@@ -1,8 +1,7 @@
 class PlacesController < ApplicationController
     
     get '/lists/:list_id/places' do
-        @all_places = @list.places
-        erb :"/places/places"
+      "Hello World"
     end
     
     get '/lists/:list_id/places/new' do #loads new form
