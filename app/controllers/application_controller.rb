@@ -22,4 +22,5 @@ class ApplicationController < Sinatra::Base
 			@current_user ||= User.find(session[:id]) if session[:id]
 		end
    end
+end
 

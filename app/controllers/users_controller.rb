@@ -17,6 +17,7 @@ class UsersController < ApplicationController
     else
      redirect to '/login'    
     end
+    end
     
     get '/signup' do
      if !logged_in?
