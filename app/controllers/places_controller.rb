@@ -3,7 +3,7 @@ class PlacesController < ApplicationController
     get '/lists/:list_id/places' do #loads all places
       @list = List.find_by_id(params[:list_id])
         @place = Place.find_by(params[:place_id])
-        @places = @list.places
+        @places = Place.all
       erb :"/places/places"
     end
     
