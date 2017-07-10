@@ -11,17 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170710083701) do
+ActiveRecord::Schema.define(version: 20170710134741) do
 
   create_table "lists", force: :cascade do |t|
     t.string  "name"
     t.integer "user_id"
-    t.integer "place_id"
   end
 
   create_table "places", force: :cascade do |t|
-    t.string "name"
-    t.string "content"
+    t.string  "name"
+    t.string  "content"
+    t.integer "list_id"
+    t.integer "user_id"
   end
 
   create_table "users", force: :cascade do |t|

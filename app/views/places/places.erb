@@ -5,11 +5,11 @@
       <% @places.each do |place| %>
         <li>Name:<%= place.name.capitalize %> <br>
            <% if @list.id == 1 %>
-            Pro Tip: <%=place.content %>
+              Pro Tip: <%=place.content %>
             <% else %>
             Why do you want to go? <%= place.content %>
         </li>
-      <% end %> 
+      <% end %>
        <h4><a href="/lists/<%= @list.id %>/places/<%= @place.id%>/edit">Edit</a></h4>
     <h4><a href="/lists/<%= @list.id %>/places/<%= @place.id %>/edit">Delete</a></h4>
    </ol>
