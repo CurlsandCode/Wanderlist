@@ -1,4 +1,4 @@
 class Place < ActiveRecord::Base
-    belongs_to :list
-    belongs_to  :user
+  has_many :lists
+  has_many :users, through: :lists
 end
