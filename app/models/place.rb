@@ -1,5 +1,5 @@
 class Place < ActiveRecord::Base
-  belongs_to :list
-  belongs_to :user
+  has_many :user_places
+  has_many :users, through: :user_places
   validates :name, :content, presence: true
 end
