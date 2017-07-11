@@ -1,8 +1,8 @@
 class UsersController < ApplicationController
 
-    get '/user/:user_id/places' do
+    get '/user/places' do
     @places = current_user.places
-    erb :'/users/user_comics'
+    erb :'/users/user_places'
     end
    
     
