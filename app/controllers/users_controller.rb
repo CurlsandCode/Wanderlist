@@ -1,5 +1,10 @@
 class UsersController < ApplicationController
 
+    get '/user/:user_id/places' do
+    @places = current_user.places
+    erb :'/users/user_comics'
+    end
+   
     
     get '/login' do
       if logged_in?
