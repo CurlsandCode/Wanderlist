@@ -28,7 +28,6 @@ class UsersController < ApplicationController
     end
     
     post '/signup' do
-    redirect to '/lists' if logged_in?
     @user = User.new(params)
     if @user.save
         redirect '/lists'
