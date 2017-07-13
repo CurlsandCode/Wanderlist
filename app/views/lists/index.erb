@@ -1,9 +1,0 @@
-<h1>Wanderlist</h1>
-<ul>
-    <% @lists.each do |list| %>
-    <li>
-        <a href="/lists/<%=list.id%>/places"><%= list.name %></a>
-    </li>
-    <%end%>
-</ul>
-<a href="/logout" >Logout</a>
