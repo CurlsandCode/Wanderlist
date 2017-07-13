@@ -8,8 +8,8 @@
             Why do you want to go? <%= place.content %>
         </li>
       <% end %>
-       <h4><a href="/places/<%= @place.id%>/edit">Edit</a></h4>
-    <h4><a href="/places/<%= @place.id %>/edit">Delete</a></h4>
+       <h4><a href="/places/<%= @place[:id]%>/edit">Edit</a></h4>
+    <h4><a href="/places/<%= @place[:id]%>/delete">Delete</a></h4>
    </ol>
    <% end %>
     <h4><a href="/places/new">Add new place</a></h4>
