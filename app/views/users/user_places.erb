@@ -1,20 +1,17 @@
 <h1>Welcome,<%= current_user.username%></h1>
-<h2><%= @list.name %></h2>  
+<h2>Vacation WishList</h2>  
 
     
     <ol>
       <% @places.each do |place| %>
         <li>Name:<%= place.name.capitalize %> <br>
-           <% if @list.id == 1 %>
-              Pro Tip: <%=place.content %>
-            <% else %>
             Why do you want to go? <%= place.content %>
         </li>
       <% end %>
-       <h4><a href="/lists/:list_id/places/<%= @place.id%>/edit">Edit</a></h4>
-    <h4><a href="/lists/:list_id/places/<%= @place.id %>/edit">Delete</a></h4>
+       <h4><a href="/places/<%= @place.id%>/edit">Edit</a></h4>
+    <h4><a href="/places/<%= @place.id %>/edit">Delete</a></h4>
    </ol>
    <% end %>
-    <h4><a href="/lists/<%= @list.id %>/places/new">Add new place</a></h4>
-    <h4><a href="/lists">Back</a></h4>
+    <h4><a href="/places/new">Add new place</a></h4>
+    <h4><a href="/places">Back</a></h4>
     <a href="/logout" >Logout</a>
