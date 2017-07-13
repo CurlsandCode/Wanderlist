@@ -24,36 +24,40 @@ class PlacesController < ApplicationController
        else
         erb :'/places/new'
        end
-     end
+    end
     
-    get '/places/:places_id/edit' do #loads edit form
+    get '/places/:id/edit' do #loads edit form
         if logged_in?
         @place = current_user.places.find_by(id: params[:id])
         if @place
          erb :"places/edit"
         else
-        redirect to '/'
+        redirect to '/places'
       end
     end
  end
-    patch '/places/:place_id' do #edits a place
-    if logged_in?
-      place = current_user.places.find_by_id(id: params[:id])
-      place.update(name: params[:name], content: params[:content])
+    patch '/places/:id' do #edits a place
+      if params.value?('')
+      redirect to "/places/#{@place.id}/edit"  
+      else
+      @place = Place.find_by_id(params[:id])
+      @place.name = params[:name]
+      @place.content = params[:content]
+      @place.user_ids = current_user.id
+      @place.save
       redirect "/places"
-        else
-        redirect '/'
+        
       end
     end
 
-   get '/places/:place_id/delete' do #deletes place
+   get '/places/:id/delete' do #deletes place
     if logged_in?
     place = current_user.places.find_by(id: params[:id])
     if place
     place.delete
     redirect "/places"
     else
-        redirect '/places/3{params[:id]}'
+        redirect '/places'
      end
     end
    end
