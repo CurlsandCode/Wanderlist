@@ -18,7 +18,7 @@ class PlacesController < ApplicationController
     end
     
     post '/places' do #creates a place
-      place = current_user.places.build(params[:place])
+      place = current_user.places.create(params[:place])
        if place.save
       redirect to "/places"
        else
