@@ -2,7 +2,7 @@
 <div class="container">
   <div class="row">
     <div class="Absolute-Center is-Responsive">
-      <div class="col-sm-12 col-md-10 col-md-offset-1" id="login">
+      <div class="col-sm-12 col-md-10 col-md-offset-1" id="form">
         <h1 class='text-center'> Edit <%= @place.name %> </h1>
          <form method="post" action="/places/<%= @place.id %>" id="form">
            <input type="hidden" name="_method" value="patch">
