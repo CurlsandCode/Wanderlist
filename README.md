@@ -1,21 +1,23 @@
 
-Wanderlist
-A  Sinatra CRUD app that allows users to keep track of places they would like to visit.
+<h1>Wanderlist<h1>
+<p>A  Sinatra CRUD app that allows users to keep track of places they would like to visit.</p>
 
 
-Installation, Usage & Development
+<h2>Installation, Usage & Development</h2>
 
-Clone this repository to your computer and run the following commands in your terminal:
-
+<p>Clone this repository to your computer and run the following commands in your terminal: </p>
+<div>
+<pre>
 1.bundle install
 2.rake db:migrate
 3.shotgun
 4.Then navigate to localhost:9393 in your browser to see it in action.
+</pre>
 
-Contributing
+<h2>Contributing</h2>
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/curlsandcode/wanderlist. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the Contributor Covenant code of conduct.
+<p>Bug reports and pull requests are welcome on GitHub at https://github.com/curlsandcode/wanderlist. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the "<a href="http://contributor-covenant.org">Contributor Covenant</a>" code of conduct.</p>
 
-License
+<h2>License</h2>
 
-The project is available as open source under the terms of the MIT License.
+The project is available as open source under the terms of the<a href="http://opensource.org/licenses/MIT"> MIT License</a>
