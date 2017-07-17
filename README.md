@@ -1,6 +1,6 @@
 
-<h1>Wanderlist<h1>
-<p>A  Sinatra CRUD app that allows users to keep track of places they would like to visit.</p>
+<h1>Wanderlist</h1>
+<p> A  Sinatra CRUD app that allows users to keep track of places they would like to visit.</p>
 
 
 <h2>Installation, Usage & Development</h2>
