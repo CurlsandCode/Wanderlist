@@ -43,6 +43,7 @@
              a {
                  color: rgb(240, 175, 78);
              }
+                 
              /* --- Places Styles --- */
              .list {
                  background-color: rgba(155, 81, 46, 0.6);
@@ -194,3 +195,4 @@
                  color: rgb(240, 175, 78);
                  text-align: center;
              }
+                

@@ -1,10 +1,11 @@
 class PlacesController < ApplicationController
     
-    get '/places' do
-        if logged_in?#loads all places
+    get '/places' do #loads all places
+        if logged_in?
         @places = Place.all
         erb :"/places/places"
        else
+       flash[:notice] = 'Please log in first.' 
        redirect to '/login'
       end
     end
@@ -22,6 +23,7 @@ class PlacesController < ApplicationController
        if place.save
       redirect to "/places"
        else
+      flash[:notice] = place.errors.full_messages.uniq.join(',')
         erb :'/places/new'
        end
     end
@@ -32,12 +34,14 @@ class PlacesController < ApplicationController
         if @place
          erb :"places/edit"
         else
+        flash[:notice] = 'You can only edit your places!' 
         redirect to '/places'
       end
     end
  end
     patch '/places/:id' do #edits a place
       if params.value?('')
+      flash[:notice] = 'Please make sure all fields are filled-in.'   
       redirect to "/places/#{@place.id}/edit"  
       else
       @place = Place.find_by_id(params[:id])
@@ -57,6 +61,7 @@ class PlacesController < ApplicationController
     place.delete
     redirect "/places"
     else
+        flash[:notice] = 'You can only delete your places!'
         redirect '/places'
      end
     end
