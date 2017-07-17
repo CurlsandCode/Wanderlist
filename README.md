@@ -7,10 +7,10 @@ Installation, Usage & Development
 
 Clone this repository to your computer and run the following commands in your terminal:
 
-bundle install
-rake db:migrate
-shotgun
-Then navigate to localhost:9393 in your browser to see it in action.
+1.bundle install
+2.rake db:migrate
+3.shotgun
+4.Then navigate to localhost:9393 in your browser to see it in action.
 
 Contributing
 
