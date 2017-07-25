@@ -1,4 +1,4 @@
-    @media screen {
+ @media screen {
     /* --- Reset Styles --- */
     * {
         list-style: none;
@@ -13,6 +13,7 @@
         margin: 0;
         padding: 0;
     }
+        
     /* ---  Page Styles --- */
     body {
         background: url(/images/maplights.jpg);
@@ -203,3 +204,4 @@
     }
 .
 
+   
