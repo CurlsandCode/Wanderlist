@@ -9,4 +9,4 @@ test:
 production:
 adapter: postgresql
   host: localhost
-  url: <%= ENV["HEROKU_POSTGRESQL_COBALT_URL"] %>
+  url: <%= ENV["DATABASE_URL"] %>
