@@ -11,9 +11,8 @@ end
 
 
 configure :production do
-  db =  URI.parse(ENV['DATABASE_URL'] || 'postgres_database_url')
-#  db =  'postgres://localhost/topofthemorning_development'
-
+  db = URI.parse(ENV['HEROKU_POSTGRESQL_COBALT_URL'] || 'postgres://localhost/mydb')
+    
   ActiveRecord::Base.establish_connection(
     :adapter  => db.scheme == 'postgres' ? 'postgresql' : db.scheme,
     :host     => db.host,
