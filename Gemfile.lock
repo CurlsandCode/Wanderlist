@@ -54,6 +54,7 @@ GEM
       method_source (~> 0.8.1)
       slop (~> 3.4)
     public_suffix (2.0.5)
+    puma (3.8.2)
     rack (2.0.3)
     rack-flash3 (1.0.5)
       rack
@@ -123,6 +124,7 @@ DEPENDENCIES
   database_cleaner!
   pg
   pry
+  puma
   rack-flash3
   rack-test
   rake
