@@ -5,6 +5,7 @@ gem 'sinatra'
 gem 'activerecord', '~> 4.2', '>= 4.2.6', :require => 'active_record'
 gem 'sinatra-activerecord', :require => 'sinatra/activerecord'
 gem 'pg'
+gem 'activerecord-postgresql-adapter'
 gem 'sqlite3', :group => :development
 gem 'rake'
 gem 'require_all'
