@@ -7,6 +7,8 @@ test:
   database: database.db
 
 production:
-adapter: postgresql
+  adapter: postgresql
+  database: wanderlist
   host: localhost
-  url: <%= ENV["DATABASE_URL"] %>
+  password: password
+  username: username
