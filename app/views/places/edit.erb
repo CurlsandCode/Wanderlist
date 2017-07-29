@@ -3,19 +3,19 @@
   <div class="row-fluid">
     <div class="Absolute-Center is-Responsive">
       <div class="col-sm-12 col-md-10 col-md-offset-1" id="form">
-        <h1 class='text-center'> Edit <%= @place.name %> </h1>
-         <form method="post" action="/places/<%= @place.id %>" id="form">
-           <input type="hidden" name="_method" value="patch">
-           <div class="form-group input-group">
-           <span class="input-group-addon"><i class="glyphicon glyphicon-plane"></i></span>
-            <input class= "form-control" type='text' name='name' value="<%=@place.name%>" id="name" placeholder='Name'>
-             </div>
+         <h1 class='text-center'> Edit <%= @place.name %> </h1>
+           <form method="post" action="/places/<%= @place.id %>" id="form">
+             <input type="hidden" name="_method" value="patch">
             <div class="form-group input-group">
-            <span class="input-group-addon"><i class="glyphicon glyphicon-question-sign"></i></span>
-            <input class="form-control" type='text-area' name='content' value="<%=@place.content%>" id="content" placeholder='Why do you want to go there?' >
+              <span class="input-group-addon"><i class="glyphicon glyphicon-plane"></i></span>
+               <input class= "form-control" type='text' name='name' value="<%=@place.name%>" id="name" placeholder='Name'>
+             </div>
+             <div class="form-group input-group">
+               <span class="input-group-addon"><i class="glyphicon glyphicon-question-sign"></i></span>
+               <input class="form-control" type='text-area' name='content' value="<%=@place.content%>" id="content" placeholder='Why do you want to go there?' >
             </div>
              <div class="form-group">
-            <button type="button submit" class="btn btn-primary btn-block"> Update </button>
+              <button type="button submit" class="btn btn-primary btn-block"> Update </button>
           </div>
        </form>
      </div>
