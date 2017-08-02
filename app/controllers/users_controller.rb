@@ -17,6 +17,7 @@ class UsersController < ApplicationController
 			session[:user_id] = user.id
 			redirect '/places'
 		else
+            flash[:notice] = 'Wrong username or password.Please try again.'
 			redirect to '/login'    
 		end
 	end
@@ -33,7 +34,8 @@ class UsersController < ApplicationController
 			session[:user_id] = @user.id
 			redirect '/places'
 		else
-			redirect to '/users/create'
+            flash[:notice] ='Sorry there was an error signing  up.Please try again.'
+			 redirect to '/users/create'
 		end
 	end
 		get '/logout' do
