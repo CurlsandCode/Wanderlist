@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 
 	get '/user/places' do
-		@places = current_user.places
+		@places = current_user.places.order("created_at DESC")
 		erb :'/users/user_places'
 	end
 			get '/login' do

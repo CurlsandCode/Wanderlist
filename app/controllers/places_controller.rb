@@ -1,7 +1,7 @@
 class PlacesController < ApplicationController
 		get '/places' do #loads all places
 		if logged_in?
-			@places = Place.all
+			@places = Place.all.order("created_at DESC")
 			erb :"/places/places"
 		else
 			flash[:notice] = 'Please log in first.' 
